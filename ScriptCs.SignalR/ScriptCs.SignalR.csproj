@@ -63,7 +63,7 @@
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ScriptPack.cs" />
-    <Compile Include="TestHub.cs" />
+    <Compile Include="SignalR.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

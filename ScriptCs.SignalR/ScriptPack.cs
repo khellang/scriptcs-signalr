@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-
-using Microsoft.AspNet.SignalR;
-using Microsoft.Owin.Hosting;
-
-using Owin;
+﻿using System.Collections.Generic;
 
 using ScriptCs.Contracts;
 
@@ -29,35 +23,5 @@ namespace ScriptCs.SignalR
         }
 
         public void Terminate() { }
-    }
-
-    public class SignalR : IScriptPackContext
-    {
-        public void StartServer(string url)
-        {
-            using (WebApplication.Start<Server>(url))
-            {
-                Console.WriteLine("Server running on {0}", url);
-                Console.ReadLine();
-            }
-        }
-    }
-
-    public class Server
-    {
-        private readonly string _path;
-
-        private readonly HubConfiguration _config;
-
-        public Server(string path = null, HubConfiguration config = null)
-        {
-            _path = path ?? "/signalr";
-            _config = config ?? new HubConfiguration();
-        }
-
-        public void Configuration(IAppBuilder app)
-        {
-            app.MapHubs(_path, _config);
-        }
     }
 }
