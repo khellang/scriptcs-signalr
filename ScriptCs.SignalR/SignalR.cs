@@ -29,7 +29,11 @@ namespace ScriptCs.SignalR
             public Server(string path = null, HubConfiguration config = null)
             {
                 _path = path ?? "/signalr";
-                _config = config ?? new HubConfiguration();
+                _config = config ?? new HubConfiguration()
+                {
+                    EnableCrossDomain = true,
+                    EnableDetailedErrors = true
+                };
             }
 
             public void Configuration(IAppBuilder app)

@@ -10,8 +10,8 @@ namespace ScriptCs.SignalR
         {
             var namespaces = new List<string>
             {
-                "Microsoft.AspNet.SignalR", 
-                "Microsoft.AspNet.SignalR.Hubs"
+                "Microsoft.AspNet.SignalR",
+                "ScriptCs.SignalR"
             };
 
             namespaces.ForEach(session.ImportNamespace);
